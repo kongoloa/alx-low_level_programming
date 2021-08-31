@@ -1,8 +1,7 @@
 #include "main.h"
-
 /**
- * main -  prints Holberton, followed by a new line
- * Return: Always 0 (Success)
+ * main - Main block
+ * Return: Always 0
  */
 int main(void)
 {
