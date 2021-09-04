@@ -6,21 +6,28 @@
  */
 void print_number(int n)
 {
-unsigned int x;
+int copy, nth, size = 1, ones = n % 10;
 
-if (n < 0)
+n /= 10;
+copy = n;
+if (ones < 0)
 {
-x = -n;
+ones *= -1, copy *= -1, n *= -1;
 _putchar('-');
-} else
-{
-x = n;
 }
-
-if (x / 10)
+if (copy > 0)
 {
-print_number(x / 10);
+while (copy / 10 != 0)
+{
+copy /= 10, size *= 10;
 }
-
-_putchar((x % 10) + '0');
+while (size > 0)
+{
+nth = n / size;
+_putchar('0' + nth);
+n -= nth * size;
+size /= 10;
+}
+}
+_putchar('0' + ones);
 }
