@@ -1,11 +1,13 @@
 #include "main.h"
 /**
- * wildcmp - compares two strings
- * @s1: 1st string to be compared
- * @s2: second string containing '*' or not
- * Return: 1 if the strings can be considered as identical, and 0
+ * test - tests if wildcard is a proper match
+ * @s5: string to compare
+ * @s6: wildcard match to compare
+ * @t5: first spot that was checked
+ * @t6: first spot in wildcard comparison
+ *
+ * Return: spot that matches or NULL
  */
-
 char *test(char *s5, char *s6, char *t5, char *t6)
 {
 if (*s6 == '*' || (*s5 == '\0' && *s6 == '\0'))
