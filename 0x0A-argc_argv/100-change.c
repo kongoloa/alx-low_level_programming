@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -9,31 +10,33 @@
 
 int main(int argc, char *argv[])
 {
-int a, n = 0, i, t;
-int c[5] = {25, 10, 5, 2, 1};
+int num, j, result;
+int coins[] = {25, 10, 5, 2, 1};
 
 if (argc != 2)
 {
-puts("Error");
+printf("Error\n");
 return (1);
 }
-a = atoi(argv[1]);
-if (a <= 0)
+
+num = atoi(argv[1]);
+result = 0;
+
+if (num < 0)
 {
-puts("0");
-return (1);
+printf("0\n");
+return (0);
 }
-else
+
+for (j = 0; j < 5 && num >= 0; j++)
 {
-for (i = 0; i < 5; i++)
+while (num >= coins[j])
 {
-t = a / c[i];
-a -= t * c[i];
-n += t;
-if (a == 0)
-break;
+result++;
+num -= coins[j];
 }
 }
-printf("%d\n", n);
+
+printf("%d\n", result);
 return (0);
 }
