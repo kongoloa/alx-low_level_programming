@@ -15,6 +15,7 @@ if (argc != 3)
 puts("Error");
 return (1);
 }
+/* atoi convert a string to an int */
 a = atoi(argv[1]);
 b = atoi(argv[2]);
 c = a * b;
