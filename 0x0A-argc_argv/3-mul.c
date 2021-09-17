@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -6,19 +7,18 @@
  * @argv: array of pointers to argument strings
  * Return: 0 if no errors, else 1
  */
+
 int main(int argc, char *argv[])
 {
-int a, b, c;
+(void) argc;
 
-if (argc != 3)
+if (argv[1] && argv[2])
 {
-puts("Error");
-return (1);
-}
-/* atoi convert a string to an int */
-a = atoi(argv[1]);
-b = atoi(argv[2]);
-c = a * b;
-printf("%d\n", c);
+printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 return (0);
+}
+else
+printf("Error\n");
+
+return (1);
 }
