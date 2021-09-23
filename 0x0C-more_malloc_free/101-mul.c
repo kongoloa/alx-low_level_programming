@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 {
 char *num1 = argv[1];
 char *num2 = argv[2];
-
 if (argc != 3 || !onlyNumbers(num1) || !onlyNumbers(num2))
 {
 printf("Error\n");
@@ -22,7 +21,6 @@ else
 multiply(num2, num1);
 return (0);
 }
-
 /**
  * multiply - multiplies two numbers and displays it
  * @num1: first "number"
@@ -32,7 +30,6 @@ void multiply(char *num1, char *num2)
 {
 int i, len1, len2, total, fdigit, sdigit, res = 0, tmp;
 int *ptr;
-
 len1 = _strlen(num1);
 len2 = _strlen(num2);
 tmp = len2;
@@ -77,7 +74,6 @@ c++;
 }
 return (1);
 }
-
 /**
  * _strlen - returns the length of a string
  * @s: string s
@@ -86,12 +82,10 @@ return (1);
 int _strlen(char *s)
 {
 char *p = s;
-
 while (*s)
 s++;
 return (s - p);
 }
-
 /**
  * _memset - fills memory with a constant byte
  * @s: memory area
@@ -102,12 +96,10 @@ return (s - p);
 char *_memset(char *s, char b, unsigned int n)
 {
 char *ptr = s;
-
 while (n--)
 *s++ = b;
 return (ptr);
 }
-
 /**
  * _calloc - allocates memory for an array, using malloc
  * @nmemb: number of elements of pointer
@@ -117,7 +109,6 @@ return (ptr);
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 void *ptr;
-
 if (!nmemb || !size)
 return (NULL);
 ptr = malloc(size * nmemb);
