@@ -7,33 +7,33 @@
  * @n: bytes to include of s2
  * Return: pointer to new space in memory or null
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-char *strDup;
-int i;
-unsigned int j;
+unsigned int i, j, k;
+char *s;
 if (s1 == NULL)
-s1 = "";
-if (s2 == NULL)
-s2 = "";
 i = 0;
-while (s1[i] != '\0')
-i++;
-strDup = malloc(sizeof(char) * (i + n + 1));
-if (strDup == NULL)
+else
+{
+for (i = 0; s1[i]; i++)
+;
+}
+if (s2 == NULL)
+j = 0;
+else
+{
+for (j = 0; s2[j]; j++)
+;
+}
+if (j > n)
+j = n;
+s = malloc(sizeof(char) * (i + j + 1));
+if (s == NULL)
 return (NULL);
-i = j = 0;
-while (s1[i] != '\0')
-{
-strDup[i] = s1[i];
-i++;
-}
-while (j < n && s2[j] != '\0')
-{
-strDup[i] = s2[j];
-i++, j++;
-}
-strDup[i] = '\0';
-return (strDup);
+for (k = 0; k < i; k++)
+s[k] = s1[k];
+for (k = 0; k < j; k++)
+s[k + i] = s2[k];
+s[i + j] = '\0';
+return (s);
 }
