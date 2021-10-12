@@ -7,8 +7,11 @@
  */
 size_t listint_len(const listint_t *h)
 {
-const listint_t *c;
-size_t count;
-for (c = h, count = 0; c != NULL; count++, c = c->next);
+size_t count = 0;
+while (h != NULL)
+{
+count++;
+h = h->next;
+}
 return (count);
 }
