@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
  * free_dlistint - frees a doubly linked list
@@ -7,11 +8,11 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *freed;
-	for (; head != NULL;)
-	{
-		freed = head->next;
-		free(head);
-		head = freed;
-	}
+dlistint_t *freed;
+for (; head != NULL;)
+{
+freed = head->next;
+free(head);
+head = freed;
+}
 }
